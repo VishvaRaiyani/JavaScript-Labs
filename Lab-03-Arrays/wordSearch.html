@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        s = prompt("Enter Sentence : ");
+
+        // s.split();
+
+        temp = s.split(" ")
+        // '' - charcacter thi alag pade
+        // ' ' - space thi alag pade
+
+        u = prompt("Enter word for search : ");
+        document.write(temp + "<br>")
+
+        for(i = 0 ; i < temp.length ; i++){
+            if(temp[i] == u){
+                document.write("Index of your word in sentence is : "+(i+1));
+                break;
+            }
+        }        
+    </script>
+</body>
+</html>
+
+
+
+<!-- let words = [];
+
+// Take 5 words from user
+for (let i = 0; i < 5; i++) {
+    words[i] = prompt("Enter word " + (i + 1));
+}
+
+// Search word
+let searchWord = prompt("Enter word to search");
+
+let index = -1;
+
+// Search using loop
+for (let i = 0; i < words.length; i++) {
+    if (words[i] === searchWord) {
+        index = i;
+        break;
+    }
+}
+
+// Display result
+if (index !== -1) {
+    alert("Word found at index: " + index);
+} else {
+    alert("Word Not Found");
+} -->

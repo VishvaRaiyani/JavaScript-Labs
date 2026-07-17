@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <script>
+
+        let num = parseInt(prompt("Enter 2 digit number:"));
+
+        let first = parseInt(num / 10);
+        let second = num % 10;
+
+        let result = 1;
+
+        for (let i = 1; i <= second; i++) {
+            result = result * first;
+        }
+
+        alert("Result = " + result);
+
+    </script>
+
+</body>
+
+</html>

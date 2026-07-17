@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Palindrome</title>
+</head>
+
+<body>
+
+    <script>
+        num = parseInt(prompt("Enter a number:"));
+        temp = num;
+        rev = 0;
+        rem;
+
+        while (temp > 0) {
+            rem = temp % 10;
+            rev = rev * 10 + rem;
+            temp = parseInt(temp / 10);
+        }
+
+        if (num == rev)
+            alert(num + " is Palindrome");
+        else
+            alert(num + " is Not Palindrome");
+    </script>
+
+</body>
+
+</html>

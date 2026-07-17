@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number to Words Converter</title>
+</head>
+
+<body>
+    <script>
+        let n = parseInt(prompt("Enter number : "));
+        let word;
+        let ones = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+        let tens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "ninteen"]
+        let twentys = ["", "", "twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninty"]
+
+        if (n >= 1000) {
+            document.write("Number in words : " + "Out of range")
+        }
+
+        else {
+            if (n < 10) {
+                word = ones[n];
+            }
+
+            else if (n < 20) {
+                word = tens[n - 10];
+            }
+
+            else if (n < 100) {
+                word = twentys[Math.floor(n / 10)] + " " + ones[n % 10]
+
+            }
+
+            else if (n == 100) {
+                word = 'hundred'
+            }
+
+            else if (n > 100 && n < 1000) {
+                word = ones[Math.floor(n / 100)] + " " + "hundred"
+
+                if (n % 100 < 10 && n % 100 != 0) {
+                    word = word + " " + ones[n % 10]
+                }
+
+                else if (n % 100 < 20) {
+                    word = word + " " + tens[(n % 100) - 10]
+                }
+
+                else {
+                    word = word + " " + twentys[Math.floor((n % 100) / 10)] + " " + ones[n % 10]
+                }
+            }
+
+            document.write("Number in words : " + word)
+
+        }
+
+    </script>
+</body>
+
+</html>

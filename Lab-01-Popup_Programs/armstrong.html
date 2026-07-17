@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <script>
+
+        let num = parseInt(prompt("Enter a number:"));
+
+        let temp = num;
+        let count = 0;
+
+        while (temp > 0) {
+            count++;
+            temp = parseInt(temp / 10);
+        }
+
+        temp = num;
+        let sum = 0;
+        let rem;
+
+        while (temp > 0) {
+            rem = temp % 10;
+            sum = sum + Math.pow(rem, count);
+            temp = parseInt(temp / 10);
+        }
+
+        if (sum == num) {
+            alert(num + " is an Armstrong Number");
+        }
+        else {
+            alert(num + " is Not an Armstrong Number");
+        }
+
+    </script>
+
+</body>
+
+</html>

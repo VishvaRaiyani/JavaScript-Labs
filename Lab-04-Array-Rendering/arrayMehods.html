@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Array Methods</title>
+</head>
+
+<body>
+
+    <script>
+
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        document.write("<h2>Original Array</h2>");
+        document.write(arr + "<br><br>");
+
+        arr.push(11);
+        document.write("<b>push(11): </b>" + arr + "<br><br>");
+
+        arr.pop();
+        document.write("<b>pop(): </b>" + arr + "<br><br>");
+
+        arr.shift();
+        document.write("<b>shift(): </b>" + arr + "<br><br>");
+
+        arr.unshift(100);
+        document.write("<b>unshift(100): </b>" + arr + "<br><br>");
+
+        res = arr.splice(3, 2);
+        document.write("<b>splice(3,2): </b>" + arr + "<br><br>");
+        document.write("<b>res: </b>" + res + "<br><br>");
+        arr1 = [1,2,3,4,5,6,7]
+        document.write("<h2>Original Array</h2>");
+        document.write(arr1 + "<br><br>");
+        res1 = arr1.splice(1,4,8)
+        document.write("<b>splice(1,4,8): </b>" + arr1 + "<br><br>");
+        document.write("<b>res1: </b>" + res1 + "<br><br>");
+
+        document.write("<h4>Array After Spliced</h4>");
+        document.write(arr + "<br><br>");
+
+        let newArr = arr.slice(2, 6);
+        document.write("<b>slice(2,6): </b>" + newArr + "<br><br>");
+
+        
+        document.write("<b>sort(): </b>" + arr.sort() + "<br><br>");
+
+        document.write("<b>indexOf(8): </b>" + arr.indexOf(8) + "<br><br>");
+
+        document.write("<b>includes(5): </b>" + arr.includes(5) + "<br><br>");
+
+        document.write("<b>join('-'): </b>" + arr.join("-") + "<br><br>");
+
+        arr.reverse();
+        document.write("<b>reverse(): </b>" + arr + "<br><br>");
+
+        document.write("<b>length: </b>" + arr.length + "<br><br>");
+
+    </script>
+
+</body>
+
+</html>

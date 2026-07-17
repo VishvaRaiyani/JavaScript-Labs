@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <script>
+
+        let str = prompt("Enter a word:");
+
+        let first = str.indexOf("a");
+        let last = str.lastIndexOf("a");
+
+        document.write("First Position = " + (first + 1) + "<br>");
+        document.write("Last Position = " + (last + 1) + "<br>");
+
+        let middle = str.substring(first + 1, last);
+
+        document.write("Between String = " + middle);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <script>
+
+        let start = parseInt(prompt("Enter starting number:"));
+        let end = parseInt(prompt("Enter ending number:"));
+
+        document.write("Prime Numbers:<br>");
+
+        for (let i = start; i <= end; i++) {
+            let prime = true;
+
+            if (i <= 1) {
+                prime = false;
+            }
+
+            for (let j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    prime = false;
+                    break;
+                }
+            }
+
+            if (prime) {
+                document.write(i + "<br>");
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

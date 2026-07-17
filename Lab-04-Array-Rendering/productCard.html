@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let products = [
+            {
+                id: 1,
+                name: 'Laptop',
+                description: 'A high performance laptop',
+                price: 1200,
+                category: 'Electronics',
+                inStock: true
+            },
+            {
+                id: 2,
+                name: 'Smartphone',
+                description: 'Latest model smartphone with advanced features',
+                price: 800,
+                category: 'Electronics',
+                inStock: true
+            },
+            {
+                id: 3,
+                name: 'Desk Chair',
+                description: 'Ergonomic desk chair for comfortable seating',
+                price: 150,
+                category: 'Furniture',
+                inStock: false
+            },
+            {
+                id: 4,
+                name: 'Book',
+                description: 'A popular science fiction novel',
+                price: 20,
+                category: 'Books',
+                inStock: true
+            },
+            {
+                id: 5,
+                name: 'Headphones',
+                description: 'Noise-cancelling over-ear headphones',
+                price: 200,
+                category: 'Electronics',
+                inStock: true
+            },
+            {
+                id: 4,
+                name: 'Book',
+                description: 'A popular science fiction novel',
+                price: 20,
+                category: 'Books',
+                inStock: true
+            },
+            {
+                id: 5,
+                name: 'Headphones',
+                description: 'Noise-cancelling over-ear headphones',
+                price: 200,
+                category: 'Electronics',
+                inStock: true
+            }
+        ];
+
+        document.write("<div class='container mt-5'>");
+        document.write("<div class='row g-4'>");
+
+        for (let i = 0; i < products.length; i++) {
+            document.write(`
+        <div class="col-md-4">
+            <div class="card h-100 shadow">
+                <div class="card-body">
+                    <h4 class="card-title">${products[i].name}</h4>
+                    <span class="badge bg-primary mb-2">
+                        ${products[i].category}
+                    </span>
+                    <p><strong>ID:</strong> ${products[i].id}</p>
+                    <p>
+                        <strong>Price:</strong> $${products[i].price}
+                    </p>
+                    <p>
+                        <strong>Status:</strong>
+                        <span class="badge ${products[i].inStock ? 'bg-success' : 'bg-danger'}">
+                            ${products[i].inStock ? 'In Stock' : 'Out of Stock'}
+                        </span>
+                    </p>
+                    <p class="card-text">
+                        ${products[i].description}
+                    </p>
+                </div>
+                <div class="card-footer bg-white border-0">
+                    <button class="btn btn-dark w-100">
+                        View Product
+                    </button>
+                </div>
+            </div>
+        </div>
+    `);
+        }
+        document.write("</div>");
+        document.write("</div>");
+    </script>
+</body>
+
+</html>

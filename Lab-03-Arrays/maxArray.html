@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        n = parseInt(prompt("Enter size of an array : "));
+        arr = []
+        for(i = 0 ; i < n ; i++){
+            arr[i] = parseInt(prompt("Enter Number : "));
+        }
+
+        document.write(arr);
+
+        for(i = 0 ; i < n ; i++) {
+            if(i == 0) {
+                max = arr[i];
+            }
+            else {
+                if(arr[i] > max) {
+                    max = arr[i]
+                }
+            }
+        }
+        document.write("<br>")
+        document.write("Maximum Number in array is ",max);
+    </script>
+</body>
+</html>

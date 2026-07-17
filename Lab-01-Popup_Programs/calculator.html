@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Calculator</title>
+</head>
+
+<body>
+
+    <script>
+        //default prompt() function returns a string, so we need to convert it to a number for calculations
+        //parseInt() is used to convert the string input from prompt to an integer
+        num1 = parseInt(prompt("Enter first number:"));
+        num2 = parseInt(prompt("Enter second number:"));
+        op = prompt("Enter operator (+, -, *, /)");
+
+        if (ope == "+") {
+            result = num1 + num2;
+        }
+        else if (op == "-") {
+            result = num1 - num2;
+        }
+        else if (op == "*") {
+            result = num1 * num2;
+        }
+        else if (op == "/") {
+            result = num1 / num2;
+        }
+        else {
+            result = "Invalid Operator";
+        }
+
+        alert("Result = " + result);
+    </script>
+</body>
+</html>
