@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mouse Events using addEventListener()</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        #box {
+            width: 350px;
+            height: 220px;
+            background: #2196F3;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="box">Perform Mouse Action</div>
+
+    <script>
+
+        var box = document.getElementById("box");
+
+        box.addEventListener("click", function () {
+            box.innerHTML = "Click Event";
+        });
+
+        box.addEventListener("dblclick", function () {
+            box.innerHTML = "Double Click Event";
+        });
+
+        box.addEventListener("mouseenter", function () {
+            box.innerHTML = "Mouse Enter Event";
+        });
+
+        box.addEventListener("mouseleave", function () {
+            box.innerHTML = "Mouse Leave Event";
+        });
+
+        box.addEventListener("mousemove", function () {
+            box.innerHTML = "Mouse Move Event";
+        });
+
+        box.addEventListener("mousedown", function () {
+            box.innerHTML = "Mouse Down Event";
+        });
+
+        box.addEventListener("mouseup", function () {
+            box.innerHTML = "Mouse Up Event";
+        });
+
+        box.addEventListener("contextmenu", function (event) {
+            event.preventDefault();
+            box.innerHTML = "Right Click Event";
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<body>
+    <div class="container mt-4">
+        <h1 class="h1" style="color: cornflowerblue;" align="center" class="text-center">
+            Product Management
+        </h1>
+
+        <label for="productname" class="form-label m-2">Product Name :</label>
+        <input type="text" id="productname" class="form-control w-50 m-2">
+
+        <label for="category" class="form-label m-2">Category :</label>
+        <input type="text" id="category" class="form-control w-50 m-2">
+
+        <label for="price" class="form-label m-2">Price :</label>
+        <input type="text" id="price" class="form-control w-50 m-2">
+
+        <label for="image" class="form-label m-2">Image URL :</label>
+        <input type="text" id="image" class="form-control w-50 m-2">
+
+        <button onclick="addProduct()" id="editOrAdd" class="btn btn-primary m-3 w-30">ADD</button>
+
+        <div class='row' id="cardbody"></div>
+    </div>
+    <script>
+        arr = [];
+        editIndex = -1
+        function createCard() {
+            temp = ''
+            for (i = 0; i < arr.length; i++) {
+                temp += ` 
+                <div class="card" style="width: 18rem;">
+                <img src="${arr[i].image}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">${arr[i].name}</h5>
+                <p class="card-text">${arr[i].category}</p>
+                <p class="card-text">$${arr[i].price}</p>
+                <button type='button' onclick = 'editProduct(${i})' class='btn btn-success'>Edit</button>
+                <button type='button' onclick = 'deleteProduct(${i})' class='btn btn-danger'>Delete</button>
+                </div>
+                </div> `
+            }
+            document.getElementById("cardbody").innerHTML = temp;
+        }
+        createCard()
+        function addProduct() {
+            pname = document.getElementById("productname").value
+            cname = document.getElementById("category").value
+            prc = document.getElementById("price").value
+            img = document.getElementById("image").value
+
+            if (pname == '' || cname == '' || prc == '' || img == '') {
+                alert("Please Enter product name or  categary name or product's price and product image url")
+            }
+            products = {
+                name: pname,
+                category: cname,
+                price: prc,
+                image: img
+            }
+
+            if (editIndex != -1) {
+                arr[editIndex] = products
+                editIndex = -1
+                document.getElementById("editOrAdd").innerHTML = "ADD";
+            }
+            else {
+                if (pname == '' || cname == '' || prc == '' || img == '') {
+                    alert("Please Enter product name or  category name or product's price and product image url")
+                
+                }
+                else {
+                    arr.push(products);
+                }
+            }
+            document.getElementById("productname").value = " "
+            document.getElementById("category").value = " "
+            document.getElementById("price").value = " "
+            document.getElementById("image").value = " "
+            createCard()
+        }
+        function deleteProduct(index) {
+            arr.splice(index, 1)
+            createCard();
+        }
+        function editProduct(index) {
+            editIndex = index;
+            document.getElementById("productname").value = arr[index].name;
+            document.getElementById("category").value = arr[index].category;
+            document.getElementById("price").value = arr[index].price;
+            document.getElementById("image").value = arr[index].image;
+            document.getElementById("editOrAdd").innerHTML = "EDIT";
+        }
+    </script>
+</body>
+
+</html>

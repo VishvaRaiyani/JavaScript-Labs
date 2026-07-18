@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change HTML Properties</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        #box {
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            background: lightgray;
+            font-size: 25px;
+            border: 2px solid black;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="box">
+        Hello World
+    </div>
+
+    <button onclick="changeProperties()">Change Properties</button>
+
+    <script>
+
+        function changeProperties() {
+
+            let box = document.getElementById("box");
+
+            box.innerHTML = "JavaScript DOM";
+            box.style.backgroundColor = "lightblue";
+            box.style.color = "white";
+            box.style.fontSize = "30px";
+            box.style.borderRadius = "10px";
+            box.style.border = "5px solid royalblue";
+            box.style.padding = "30px";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

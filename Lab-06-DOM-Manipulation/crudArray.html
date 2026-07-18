@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<body>
+    <label for="" class="m-3">Student Name</label>
+    <input type="text" id="stuName">
+    <button onclick="addStudent()" class="btn btn-primary" id="editOrAdd">ADD</button>
+    <button onclick="Update()">Update</button>
+    <table class="table table-striped table-hover" >
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tableBodyId">
+        </tbody>
+    </table>
+    <script>
+        arr = [];
+        editIndex = -1
+
+        function createTable() {
+            temp = ''           
+            for (i = 0; i < arr.length; i++) {
+                temp += ` 
+                <tr>
+                <td>${i + 1}</td>
+                <td>${arr[i]}</td>
+                <td>
+                <button type='button' onclick = 'editName(${i})' class='btn btn-success'>Edit</button>
+                <button type='button' onclick = 'deleteName(${i})' class='btn btn-danger'>Delete</button>
+                </td>
+                </tr> `
+            }
+            document.getElementById("tableBodyId").innerHTML = temp;
+        }
+
+        createTable()
+        function addStudent() {
+            sname = document.getElementById("stuName").value
+
+            if (editIndex != -1) {
+                arr[editIndex] = sname
+                editIndex = -1
+                editOrAdd.innerHTML = "ADD";
+            }
+            else {
+                if (sname == '') {
+                    alert("Please Enter Name")
+                }
+                else {
+                    arr.push(sname);
+                }
+            }
+            document.getElementById("stuName").value = ''
+            createTable();
+        }
+
+        function deleteName(index) {
+            arr.splice(index, 1)
+            createTable();
+        }
+
+        function editName(index) {
+            editIndex = index;
+            document.getElementById("stuName").value = arr[index];
+            editOrAdd.innerHTML = "Edit"
+        }
+
+        function Update(){
+            arr[editIndex] = document.getElementById("stuName").value
+            // uname = document.getElementById("stuName").value
+            //arr.splice(editIndex , 1 , uname)
+        }
+    </script>
+</body>
+
+</html>

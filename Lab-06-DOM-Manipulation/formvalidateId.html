@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Form</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 650px;
+            /* Bigger form */
+            background: white;
+            padding: 35px 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 6px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: royalblue;
+        }
+
+        span {
+            color: red;
+            font-size: 12px;
+            display: block;
+            height: 16px;
+            margin-top: 2px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background: royalblue;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: dodgerblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2 align="center">Registration Form</h2>
+
+        <form id="myForm">
+
+            <label>Full Name</label>
+            <input type="text" id="name">
+            <span id="nameError"></span>
+
+            <br><br>
+
+            <label>Email</label>
+            <input type="text" id="email">
+            <span id="emailError"></span>
+
+            <br><br>
+
+            <label>Phone</label>
+            <input type="text" id="phone">
+            <span id="phoneError"></span>
+
+            <br><br>
+
+            <label>Enrollment Number</label>
+            <input type="text" id="enroll">
+            <span id="enrollError"></span>
+
+            <br><br>
+
+            <label>Password</label>
+            <input type="password" id="password">
+            <span id="passwordError"></span>
+
+            <br><br>
+
+            <label>Confirm Password</label>
+            <input type="password" id="confirmPassword">
+            <span id="confirmError"></span>
+
+            <br><br>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+    </div>
+
+    <script>
+
+        document.getElementById("myForm").addEventListener("submit", function (e) {
+
+            e.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let enroll = document.getElementById("enroll").value;
+            let password = document.getElementById("password").value;
+            let confirm = document.getElementById("confirmPassword").value;
+
+            let namePattern = /^[A-Za-z ]+$/;
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let phonePattern = /^[0-9]{10}$/;
+            let enrollPattern = /^[0-9]{11}$/;
+            let passwordPattern = /^(?=.*[0-9])(?=.*[!@#$%^&*]).{8,12}$/;
+
+            document.getElementById("nameError").innerHTML = "";
+            document.getElementById("emailError").innerHTML = "";
+            document.getElementById("phoneError").innerHTML = "";
+            document.getElementById("enrollError").innerHTML = "";
+            document.getElementById("passwordError").innerHTML = "";
+            document.getElementById("confirmError").innerHTML = "";
+
+            let valid = true;
+
+            if (!namePattern.test(name) || name.length < 3) {
+                document.getElementById("nameError").innerHTML = "Enter valid name";
+                valid = false;
+            }
+
+            if (!emailPattern.test(email)) {
+                document.getElementById("emailError").innerHTML = "Enter valid email";
+                valid = false;
+            }
+
+            if (!phonePattern.test(phone)) {
+                document.getElementById("phoneError").innerHTML = "Enter 10 digit phone number";
+                valid = false;
+            }
+
+            if (!enrollPattern.test(enroll)) {
+                document.getElementById("enrollError").innerHTML = "Enter 11 digit enrollment number";
+                valid = false;
+            }
+
+            if (!passwordPattern.test(password)) {
+                document.getElementById("passwordError").innerHTML = "Password must be 8-12 characters with 1 number and 1 special character";
+                valid = false;
+            }
+
+            if (password !== confirm) {
+                document.getElementById("confirmError").innerHTML = "Passwords do not match";
+                valid = false;
+            }
+
+            if (valid) {
+                alert("Form Submitted Successfully");
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+    </style>
+</head>
+
+<body id="btn">
+    <div class="m-3">
+
+        <h1 id="h1">Key-Down = Plum</h1>
+        <h1 id="h1">Key-Press = Pink</h1>
+        <h1 id="h1">Key-Up = White</h1>
+    </div>
+    <input type="text" id="inputtxt" class="m-3">
+
+
+    <script>
+        // addEventLister method is used to attach an event handler to the specified element. 
+        // It allows you to specify the type of event you want to listen for and the function that should be 
+        // executed when that event occurs.
+        // first parameter is the type of event to listen for (e.g., "click", "keydown", "keyup", etc.).
+        // second parameter is the function that will be called when the event occurs.
+        document.getElementById("inputtxt").addEventListener("keydown", (e) => {
+            btn.style.backgroundColor = 'plum';
+        })
+
+        document.getElementById("inputtxt").addEventListener("keypress", (e) => {
+            btn.style.backgroundColor = 'pink';
+        })
+
+        document.getElementById("inputtxt").addEventListener("keyup", (e) => {
+            btn.style.backgroundColor = 'white';
+        })
+
+    </script>
+</body>
+
+</html>

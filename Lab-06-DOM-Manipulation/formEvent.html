@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Events</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+        }
+
+        .container {
+            width: 350px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #0d6efd;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #msg {
+            margin-top: 15px;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2 align="center">Form Events</h2>
+
+        <form id="myForm">
+
+            <input type="text" id="name" placeholder="Enter Name">
+
+            <input type="email" id="email" placeholder="Enter Email">
+
+            <select id="city">
+                <option>Select City</option>
+                <option>Rajkot</option>
+                <option>Ahmedabad</option>
+                <option>Surat</option>
+            </select>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+        <p id="msg"></p>
+
+    </div>
+
+    <script>
+
+        let msg = document.getElementById("msg");
+
+        document.getElementById("name").addEventListener("focus", function () {
+            msg.innerHTML = "Name textbox focused";
+        });
+
+        document.getElementById("email").addEventListener("blur", function () {
+            msg.innerHTML = "Email textbox lost focus";
+        });
+
+        document.getElementById("city").addEventListener("change", function () {
+            msg.innerHTML = "Selected City : " + this.value;
+        });
+
+        document.getElementById("name").addEventListener("input", function () {
+            msg.innerHTML = "Typing : " + this.value;
+        });
+
+        document.getElementById("myForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            msg.innerHTML = "Form Submitted Successfully";
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      
+</head>
+<body id="bodybg">
+    <h1 id="heading">"JavaScript isn't about memorizing methods. It's about understanding how the browser thinks."</h1>
+    <h2 id="subheading">"The DOM doesn't change itself. You change it."</h2>
+    <button id="findTimeAndDate">FIND TIME</button>
+    <p id="output"></p>
+    <button id="lightBlueBG">LIGHT BLUE</button>
+    <button id="pinkBG">PINK</button>
+    <script>
+        document.getElementById("lightBlueBG").addEventListener("click" , () => {
+            temp = document.getElementById("bodybg");
+            temp.style.backgroundColor = 'lightblue';
+        })
+
+        document.getElementById("pinkBG").addEventListener("click" , () => {
+            temp = document.getElementById("bodybg");
+            temp.style.backgroundColor = 'pink';
+        })
+
+        document.getElementById("heading").addEventListener("mouseover" , () => {
+            heading.style.color = 'red'
+        })
+
+        document.getElementById("subheading").addEventListener("mouseover" , () => {
+            subheading.style.color = 'purple'
+        })
+
+        document.getElementById("heading").addEventListener("mouseout" , () => {
+            heading.style.color = 'black'
+        })
+
+        document.getElementById("subheading").addEventListener("mouseout" , () => {
+            subheading.style.color = 'black'
+        })
+
+        document.getElementById("findTimeAndDate").addEventListener("click" , () => {
+            temp = document.getElementById("output");
+            // Date() method is used to get the current date and time. 
+            // It returns a string representation of the current date and time in the local time zone.
+            // why not new Date() because new Date() returns a Date object, 
+            // which is a more complex representation of the date and time.
+            // so, if you want to display the current date and time as a string, you can use Date() directly.
+            temp.innerHTML = Date();
+        })
+    </script>
+</body>
+</html>
