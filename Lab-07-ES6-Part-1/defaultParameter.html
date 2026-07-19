@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Default Parameters</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2>Default Parameter Example</h2>
+
+    <button onclick="show()">Run</button>
+
+    <p id="output"></p>
+
+    <script>
+
+        function greet(name = "Student") {
+            return "Welcome " + name;
+        }
+
+        function show() {
+
+            let a = greet();
+            let b = greet("Vishwa");
+
+            document.getElementById("output").innerHTML =
+                a + "<br><br>" + b;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

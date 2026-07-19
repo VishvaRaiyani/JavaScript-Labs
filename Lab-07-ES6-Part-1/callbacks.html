@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallBackFunction</title>
+</head>
+
+<body>
+    <script>
+        function sum(a, b, mycallback) {
+            res = a + b;
+            mycallback(res);
+
+        }
+        function printans(ans) {
+            document.body.innerHTML = "SUM = "+ ans
+            console.log(ans);
+        }
+        sum(5, 3, printans);
+    </script>
+</body>
+
+</html>

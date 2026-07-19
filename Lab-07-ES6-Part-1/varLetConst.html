@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>var let const</title>
+</head>
+
+<body>
+
+    <h2>Difference Between var, let and const</h2>
+
+    <button onclick="demo()">Run</button>
+
+    <p id="output"></p>
+
+    <script>
+
+        function demo() {
+
+            var a = 10;
+            var a = 20;      // Redeclared
+
+            let b = 30;
+            b = 40;          // Reassigned
+
+            const c = 50;    // Cannot be changed
+
+            document.getElementById("output").innerHTML =
+                "var = " + a + "<br>" +
+                "let = " + b + "<br>" +
+                "const = " + c + "<br><br>" +
+                "var → Redeclare & Reassign ✔<br>" +
+                "let → Reassign ✔, Redeclare ✖<br>" +
+                "const → Neither Redeclare nor Reassign ✖";
+
+        }
+
+    </script>
+
+</body>
+
+</html>
