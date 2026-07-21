@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Event Demo</title>
+
+    <style>
+        #box {
+            width: 300px;
+            height: 200px;
+            background-color: lightblue;
+            margin: auto;
+            text-align: center;
+            line-height: 200px;
+            font-size: 25px;
+            border-radius: 10px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 align="center">Mouse Event Example</h2>
+
+    <div id="box">
+        Click Here
+    </div>
+
+    <h2 id="result" align="center"></h2>
+
+    <script>
+
+        let box = document.getElementById("box");
+
+        // Left Click
+        // The addEventListener() method attaches an event handler to the specified element.
+        // In this case, we are attaching a click event handler to the box element.
+        // When the box is clicked, the function will be executed, 
+        // and it will update the innerHTML of the element with id "result" to display "Left Clicked".
+        // box.addEventListener("event", function)
+        box.addEventListener("click", function () {
+
+            document.getElementById("result").innerHTML =
+                "Left Clicked";
+        });
+
+        // Right Click
+        box.addEventListener("contextmenu", function (event) {
+            // Prevent the default context menu from appearing
+            // This allows us to handle the right-click event without showing the browser's context menu
+            // The event.preventDefault() method is used to prevent the default action of the event from occurring.
+            // In this case, it prevents the context menu from appearing when the user right-clicks on the box.
+            event.preventDefault();
+
+            document.getElementById("result").innerHTML =
+                "Right Clicked";
+        });
+
+    </script>
+
+</body>
+
+</html>
