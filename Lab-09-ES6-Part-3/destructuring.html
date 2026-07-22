@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArrayandObjectDestructuring</title>
+</head>
+
+<body>
+    <script>
+        arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+        arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+        let [a , , b, c] = arr1;
+        console.log("a : "+a);
+        console.log("b : "+b);
+        console.log("c : "+c)
+
+
+        let [d, e, f, ...other] = arr2
+        console.log("d : "+d);
+        console.log("e : "+e);
+        console.log("f : "+f)
+        // in arr2 we have 9 elements but we are only taking first 3 elements and rest of the elements are stored in other variable using rest operator
+        console.log("other elements:", other)
+
+        user1 = {
+            name: 'Vishva',
+            age: 18,
+            sem: 3,
+            address: 'Rajkot'
+        }
+
+        user2 = {
+            name: 'Priyanshi',
+            age: 18,
+            sem: 3,
+            address: 'rajkot'
+        }
+
+        let { name, age } = user1;
+        console.log("user1 name : "+name);
+        console.log("user1 age : "+age);       
+        let { name: name2, age: age2, ...any } = user2;
+        console.log("user2 name : "+name2)
+        console.log("user2 name : "+age2)
+        console.log("other properties:", any)
+        //by default when we concatenate an object with string 
+        // it will be concatenated defaultly using method toString() which will return [object Object] 
+        //if we want to concatenate object with string then we have to use JSON.stringify() method 
+        // to convert it to string
+        console.log("other properties (as string):", JSON.stringify(any))
+    </script>
+</body>
+
+</html>

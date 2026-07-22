@@ -1,0 +1,264 @@
+<!-- Demonstrate How to Create a Class in JavaScript -->
+
+<!-- THEORY:
+
+A Class is a blueprint or template used to create objects.
+
+Before ES6, objects were usually created using constructor functions. ES6 introduced the class keyword, which provides a cleaner and more readable way to create objects.
+
+A class can contain:
+
+1. Properties (Variables)
+2. Methods (Functions)
+
+Objects created from a class are called instances of the class.
+
+SYNTAX:
+
+class ClassName {
+
+```
+constructor(parameter1, parameter2) {
+    this.parameter1 = parameter1;
+    this.parameter2 = parameter2;
+}
+
+methodName() {
+    // code
+}
+```
+
+}
+
+KEYWORDS USED:
+
+1. class
+   Used to create a class.
+
+2. constructor()
+   A special method that is automatically called when an object is created.
+
+3. this
+   Refers to the current object.
+
+4. new
+   Used to create an object from a class. -->
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>JavaScript Class Demonstration</title>
+</head>
+
+<body>
+
+    ```
+    <h2>JavaScript Class Example</h2>
+
+    <script>
+
+        // =====================================================
+        // Creating a Class
+        // =====================================================
+
+        class Student {
+            // When using JavaScript classes, you must use the literal keyword constructor.
+            // You cannot give it a custom name.Unlike languages like Java or C++ where the constructor 
+            // matches the class name, JavaScript standardizes the method name.
+            // Constructor Method
+            constructor(name, age, course) {
+
+            // Initialize object properties
+            this.name = name;
+            this.age = age;
+            this.course = course;
+        }
+
+        // Method to display student information
+        displayInfo() {
+
+            console.log("Student Name : " + this.name);
+            console.log("Student Age  : " + this.age);
+            console.log("Course       : " + this.course);
+        }
+
+        // Another method
+        study() {
+
+            console.log(this.name + " is studying JavaScript.");
+        }
+        }
+
+        // =====================================================
+        // Creating Objects
+        // =====================================================
+
+        const student1 = new Student(
+            "Vishwa",
+            19,
+            "Computer Engineering"
+        );
+
+        const student2 = new Student(
+            "Priyanshi",
+            20,
+            "Information Technology"
+        );
+
+        // =====================================================
+        // Calling Methods
+        // =====================================================
+
+        console.log("Student 1 Details");
+        student1.displayInfo();
+        student1.study();
+
+        console.log("--------------------");
+
+        console.log("Student 2 Details");
+        student2.displayInfo();
+        student2.study();
+
+    </script>
+
+</body>
+
+</html>
+
+<!-- EXPECTED OUTPUT:
+
+Student 1 Details
+
+Student Name : Vishwa
+Student Age  : 19
+Course       : Computer Engineering
+Vishwa is studying JavaScript.
+
+---
+
+Student 2 Details
+
+Student Name : Rahul
+Student Age  : 20
+Course       : Information Technology
+Rahul is studying JavaScript.
+
+PROGRAM EXPLANATION:
+
+Step 1:
+Create a class named Student.
+
+class Student
+
+The class acts as a blueprint for creating student objects.
+
+Step 2:
+Create a constructor.
+
+constructor(name, age, course)
+
+The constructor is automatically executed whenever an object is created using the new keyword.
+
+Step 3:
+Store values inside the object.
+
+this.name = name;
+this.age = age;
+this.course = course;
+
+The keyword this refers to the current object.
+
+Step 4:
+Create methods.
+
+displayInfo()
+study()
+
+Methods define the behavior of objects.
+
+Step 5:
+Create objects.
+
+const student1 = new Student(...);
+
+The new keyword creates a new object from the Student class.
+
+Step 6:
+Call methods.
+
+student1.displayInfo();
+
+The method executes and displays the object's data.
+
+ADVANTAGES OF CLASSES:
+
+1. Improves code readability.
+2. Supports Object-Oriented Programming.
+3. Makes code reusable.
+4. Easy to create multiple objects.
+5. Organizes data and methods together.
+
+REAL-LIFE EXAMPLE:
+
+Class = Student Form Template
+
+Objects =
+Student 1 → Vishwa
+Student 2 → Rahul
+Student 3 → Priya
+
+All students have:
+
+* Name
+* Age
+* Course
+
+but each student stores different values.
+
+VIVA QUESTIONS:
+
+Q1. What is a class in JavaScript?
+
+Answer:
+A class is a blueprint used to create objects.
+
+Q2. Which keyword is used to create a class?
+
+Answer:
+class
+
+Q3. What is a constructor?
+
+Answer:
+A special method that automatically executes when an object is created.
+
+Q4. Which keyword is used to create an object?
+
+Answer:
+new
+
+Q5. What does this refer to?
+
+Answer:
+The current object.
+
+Q6. Can a class contain multiple methods?
+
+Answer:
+Yes.
+
+Q7. What is an object?
+
+Answer:
+An instance of a class.
+
+Q8. Is constructor mandatory?
+
+Answer:
+No. JavaScript provides a default constructor if none is defined.
+
+RESULT:
+
+Thus, the creation and implementation of classes in JavaScript were successfully demonstrated using constructors, properties, methods, and objects. -->
